@@ -1,0 +1,118 @@
+.breadcrumb {
+    margin-top: 10px;
+    height: 22px;
+    line-height: 22px;
+    font-family: simsun, '\u5B8B\u4F53';
+
+}
+
+.section, .content{
+    padding: 0;
+    border: rgba(157, 157, 157, 0.34) solid 1px;
+}
+.section-header, .content-header{
+    font-family: simsun, '\u5B8B\u4F53';
+    height: 60px;
+    background-color: rgba(204, 193, 193, 0.09);
+}
+.section-title, .content-title{
+    padding-left: 40px;
+    padding-top: 10px;
+    font-weight: bolder;
+    font-size: 30px;
+    color: #000709;
+}
+
+.section-body{
+
+    padding-left: 40px;
+}
+.comments-box {
+    position: relative;
+    zoom: 1;
+    width: 331px;
+    margin: 20px 0 0;
+    padding: 12px 20px 20px 20px;
+    font-family: 'Microsoft YaHei', arial;
+}
+.comments-box .comments-box-title {
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px
+}
+
+.writebox textarea{
+    border: rgba(157, 157, 157, 0.24) solid 1px;
+}
+.comments-box-button {
+    padding: 10px 0 0
+}
+.comment-btn{
+    background-color: #0baee8;
+    color: white;
+    border: rgba(0, 0, 0, 0.19) solid 1px;
+}
+
+.comment-list{
+    top: 10px;
+    right: 98px;
+    margin: 5px 0 0
+}
+
+.comment-item {
+    position: relative;
+    zoom: 1;
+    margin: 20px 0 20px;
+    border: 1px solid #e6e6e6;
+    font-family: 'Microsoft YaHei', arial;
+    padding-bottom: 20px
+}
+.comment-item .comments-user {
+    display: inline-block;
+    overflow: hidden;
+    margin: 0 20px;
+    padding: 20px 0 10px;
+}
+
+.comment-item .comments-user img {
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    vertical-align: top
+}
+
+.comment-item .comments-user .face {
+    float: left;
+    margin: 0 10px 0 0
+}
+
+
+.comments-list-content {
+    display: inline-block;
+    width: 80%;
+    padding: 18px 0 0
+}
+
+.single-score {
+    width: 100%;
+    padding: 0 20px;
+    color: #666;
+    line-height: 18px
+}
+.single-score .score{
+    float: left;
+}
+.single-score .date{
+    float: right;
+}
+
+.comment-item .comments-content {
+    padding: 20px 20px 0
+}
+
+.comment-item .comments-content p {
+    padding: 10px 0 6px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px
+}
+

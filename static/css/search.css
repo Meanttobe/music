@@ -1,0 +1,56 @@
+.mod_songlist {
+    font-size: 14px;
+    margin: 50px 20% 0 20%;
+    text-align: center;
+}
+
+.songlist_header {
+    height: 50px;
+    line-height: 50px;
+    background-color: #fbfbfd;
+    color: #999;
+    overflow: hidden;
+    background-color: rgba(11, 174, 232, 0.37);
+    padding:0;
+}
+.songlist_list {
+    overflow: hidden;
+    line-height: 50px;
+    padding:0;
+}
+
+.songlist_header_name, .songlist_songname {
+    float: left;
+    width: 33%;
+    white-space: normal;
+}
+.songlist_header_author, .songlist_artist {
+    float: left;
+    white-space: normal;
+    width: 33%
+}
+.songlist_header_time, .songlist_time {
+    float: left;
+    white-space: normal;
+    width: 33%;
+}
+
+
+
+.songlist_list li:nth-child(even) {
+    background-color: rgba(17, 92, 232, 0.06)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

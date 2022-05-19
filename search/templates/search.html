@@ -1,0 +1,70 @@
+{% extends "title_base.html" %}
+{% load static %}
+{% block header_extends %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/search.css' %}">
+{% endblock %}
+{% block content %}
+    <!--wrapper-->
+    <div class="clearfix">
+        <div class="mod_songlist">
+            <ul class="songlist_header">
+                <li class="songlist_header_name">歌曲</li>
+                <li class="songlist_header_author">歌手</li>
+                <li class="songlist_header_time">分享时间</li>
+            </ul>
+            <ul class="songlist_list">
+                {% for list in contacts.object_list %}
+                    <li class="js_songlist_child clearfix">
+                        <div class="songlist_songname">
+                                <a href="{% url 'play' list.id %}" class="js_song"
+                                   target="play">{{ list.song_name }}
+                                </a>
+
+                        </div>
+                        <div class="songlist_artist">
+                            <a href="#" class="singer_name">{{ list.singer }}</a>
+                        </div>
+                        <div class="songlist_artist">
+                            <a href="#" class="singer_time">{{ list.song_release }}</a>
+                        </div>
+
+                    </li>
+                {% endfor %}
+            </ul>
+            {#        分页#}
+            <div class="pages clearfix">
+                <ul>
+                    {# 首页按钮，固定page=1 #}
+                    <li><a href='?page=1'>首页</a></li>
+                    {# 如果上一页还有数据，那么让其可继续点击进入上一页 #}
+                    {% if contacts.has_previous %}
+                        <li><a href="?page={{ contacts.previous_page_number }}" data-ey_fc35fdc="html" data-tmp="1">上一页</a>
+                        </li>
+                        {# 如果上一页没有数据了，那么不让做任何操作 #}
+                    {% else %}
+                    {% endif %}
+
+                    {# 由后端经逻辑判断后的page_range页数列表进行迭代 #}
+                    {% for num in contacts.paginator.page_range %}
+                        {# 如果循环的页码与当前查看的页码相等，那么就让其高亮显示 #}
+                        {% if num == contacts.number %}
+                            <li class="thisclass"><a>{{ num }}</a></li>
+                        {% else %}
+                            <li><a href="?page={{ num }}" data-ey_fc35fdc="html" data-tmp="1">{{ num }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+
+                    {# 如果当前页还有下一页，那么让其可以点击进入下一页 #}
+                    {% if contacts.has_next %}
+                        <li><a href="?page={{ contacts.next_page_number }}" data-ey_fc35fdc="html" data-tmp="1">下一页</a></li>
+                    {% endif %}
+
+                    {# 跳转到尾页，让page参数直接等于总页数 #}
+                    <li><a href='?page={{ paginator.num_pages }}'>尾页</a></li>
+                </ul>
+            </div>
+        </div><!--end mod_songlist-->
+    </div><!--end wrapper-->
+    <!--footer-->
+
+{% endblock %}

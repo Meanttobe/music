@@ -1,0 +1,74 @@
+{% load static %}
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>我的音乐</title>
+    <link type="image/x-icon" rel="shortcut icon" href="{% static 'favicon.ico' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1/css/bootstrap.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/common.css' %}">
+    {% block header_extends %}{% endblock %}
+</head>
+
+<body>
+<div class="header clearfix">
+    <div class = "wrapper">
+    <a href="/" class="logo" title="首页">
+        <img style="float: left; border-radius: 50%" alt="我的音乐" src="../../static/image/logo.jpg">
+        <span style="float: left" class="logo-text">我的音乐</span>
+    </a>
+    <div class="search-box">
+        <!-- html的表单 -->
+        <form id="searchForm" action="{% url 'search' 1 %}" method="post" target="_blank">
+            {% csrf_token %}
+            <div class="search-keyword">
+                <input name="kword" type="text" class="keyword" maxlength="120" placeholder="孤勇者"/>
+            </div>
+            <input id="subSerch" type="submit" class="search-button" value="搜 索"/>
+        </form>
+        <div class="search-hot-words">
+            {% for song in search_song %}
+                <a target="play" href="{% url 'play' song.song.id %}">{{ song.song.song_name }}</a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="l-r">
+        <ul class="rt">
+            {% if username %}
+                <li>{{ username }}</li>
+                <li><a href="{% url 'logout' %}">
+                    退出登录
+                </a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">
+                    登录
+                </a></li>
+            {% endif %}
+        </ul>
+    </div>
+    </div>
+</div>
+<div class="nav-box clearfix">
+    <div class="nav-box-inner wrapper">
+        <dl class="nav clearfix">
+            <dd><a href="/" style="font-size: 20px">首页</a></dd>
+            <dd><a href="{% url 'ranking' %}" target="_blank" style="font-size: 20px">歌曲排行</a></dd>
+            <dd><a href="{% url 'upload' %}" target="_blank" style="font-size: 20px">音乐分享</a></dd>
+            <dd><a href="{% url 'home' 1 %}" target="_blank" style="font-size: 20px">用户中心</a></dd>
+        </dl>
+    </div>
+</div><!--end nav-box-->
+<div class="wrapper">
+    {% block content %}{% endblock %}
+</div>
+<div class="footer wrapper ">
+    <div class="copyright">
+        <p>网站数据信息来源于网络</p>
+    </div>
+</div>
+</body>
+</html>

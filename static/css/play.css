@@ -1,0 +1,515 @@
+
+.content {
+    float: left;
+}
+.product-detail-box {
+    margin: 20px 0 0;
+    padding: 0 0 20px;
+    border: 1px solid #e6e6e6;
+    position: relative
+}
+
+.product-detail-box .product-pics {
+    display: inline;
+    float: left;
+    width: 400px;
+    margin: 20px 0 0 20px;
+    border-right: 1px solid #efefef
+}
+/*播放器*/
+
+.music_box {
+    width: 380px;
+    text-align: center
+}
+
+.jplayer_content {
+    height: 240px;
+    overflow-y: auto;
+    text-align: center;
+    border-top: 1px solid #eee
+}
+
+.jp_img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer
+}
+
+.jp-progress {
+    float: left;
+    width: 300px;
+    height: 10px;
+    margin-top: 3px;
+    background: #eee;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden
+}
+
+.jp-progress .jp-seek-bar {
+    height: 100%
+}
+
+.jp-progress .jp-play-bar {
+    height: 100%;
+    background: #aaa;
+    border-radius: 5px
+}
+
+.jp-time {
+    text-align: right
+}
+
+.jp-controls li {
+    float: left
+}
+
+.jp-controls li a {
+    display: inline-block;
+    width: 26px;
+    line-height: 30px;
+    font-family: iconfont;
+    font-size: 14px;
+    color: #aaa;
+    cursor: pointer;
+    outline: 0;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: .2px;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.jp-controls li a:hover {
+    text-decoration: none
+}
+
+.jp-controls .jp-play::before {
+    content: "\e634";
+    color: #0baee8;
+}
+
+.jp-controls .jp-pause::before {
+    content: "\e695";
+    color: #0baee8;
+}
+
+.jp-controls .jp-stop::before {
+    content: "\e7e0"
+}
+
+.jp-controls .jp-mute::before {
+    content: "\e617";
+    font-size: 18px
+}
+
+.jp-controls .jp-repeat::before {
+    content: "\e609";
+    font-size: 20px
+}
+
+.jp-controls .jp-repeat-off::before {
+    content: "\e609";
+    color: #eee;
+    font-size: 20px
+}
+
+.jp-controls .jp-unmute::before {
+    content: "\e67d";
+    font-size: 18px;
+    line-height: 20px
+}
+
+.jp-controls .sound {
+    float: right;
+    margin-right: 5px
+}
+
+.jp-volume-bar {
+    height: 6px;
+    width: 50px;
+    background: #999;
+    float: right;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 12px
+}
+
+.jp-volume-bar .jp-volume-bar-value {
+    background: #0baee8;
+    height: 100%
+}
+
+.lrc_list li.hover {
+    font-size: 14px;
+    color: #0baee8;
+}
+
+
+
+
+.product-detail-box .product-detail-main {
+    float: left;
+    width: 510px;
+    margin: 20px 0 0 -1px;
+    padding: 0 0 0 20px;
+    border-left: 1px solid #efefef
+}
+
+
+
+.product-comment .list_title {
+    position: relative;
+    border-top: 2px solid #0baee8;
+    margin-top: 15px;
+    background: #f0f0f0;
+    line-height: 36px;
+    padding-left: 10px
+}
+
+.product-comment .list_title a {
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    color: #aaa;
+    right: 10px;
+    top: 1px
+}
+
+.product-detail-box .playing-li {
+    padding-top: 5px;
+    height: 248px;
+    overflow-y: auto
+}
+
+.product-detail-box .playing-li li {
+    line-height: 30px;
+    border-top: 1px solid #eee;
+    font-size: 0
+}
+
+.product-detail-box .playing-li li a, .product-detail-box .playing-li li span {
+    display: inline-block;
+    height: 30px;
+    vertical-align: top;
+    font-size: 12px
+}
+
+.product-detail-box .playing-li li a {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.product-detail-box .playing-li li .num {
+    width: 30px;
+    text-align: center;
+    margin-right: 5px
+}
+
+.product-detail-box .playing-li li .name {
+    width: 200px
+}
+
+.product-detail-box .playing-li li .singer {
+    width: 120px;
+    color: #aaa
+}
+
+.product-detail-box .playing-li li .singer:hover {
+    color: #333
+}
+
+.product-detail-box .playing-li li .menu {
+    width: 30px;
+    height: 30px;
+    text-align: center
+}
+
+.product-detail-box .playing-li li .menu a {
+    color: #ccc
+}
+
+.product-detail-box .playing-li li .menu a:hover {
+    color: #333
+}
+
+.product-detail-box .playing-li li:first-child {
+    border: none
+}
+
+.product-detail-box .playing-li li.current {
+    color: #0baee8;
+}
+
+.product-detail-box .playing-li li.current a {
+    color: #0baee8;
+}
+
+.product-detail-box .playing-li li.current .pling {
+    display: block;
+    text-indent: -9999px
+}
+
+.product-detail-box .links > a {
+    float: left;
+    height: 30px;
+    margin: 16px 10px 0 0;
+    padding: 0 16px;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+    line-height: 30px;
+    font-size: 16px
+}
+
+.product-detail-box .links .compare_con {
+    position: absolute;
+    z-index: 99999;
+    display: none;
+    top: 56px;
+    left: 88px
+}
+
+.product-detail-box .links .icon {
+    float: left;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    margin: 11px 0 0 0
+}
+
+.product-detail-box .links .minimum-link-A, .product-detail-box .links .minimum-link-B {
+    border: 1px solid #30C37E;
+    background: #0baee8;
+    color: #fff;
+    padding: 0 10px;
+    border-radius: 4px;
+    cursor: pointer
+}
+
+.product-detail-box .links .minimum-link-A:hover, .product-detail-box .links .minimum-link-B:hover {
+    border: 1px solid #00a39E;
+    background: #00a39E;
+    color: #fff;
+    text-decoration: none
+}
+
+.product-detail-box .links .minimum-link-A {
+    font-family: iconfont
+}
+
+.product-detail-box .links .minimum-link-A::before {
+    font-size: 20px;
+    margin-right: 5px;
+    position: relative;
+    top: 2px
+}
+
+.product-detail-box .links .click_play::before {
+    content: "\e62c"
+}
+
+.product-detail-box .links .click_pause::before {
+    content: "\e606"
+}
+
+.product-detail-box .links .click_down::before {
+    content: "\e613"
+}
+
+.product-detail-box .links .consultation-link {
+    border: 1px solid #30C37E;
+    background: #0baee8;
+    color: #fff
+}
+
+.product-detail-box .links .consultation-link:hover {
+    border: 1px solid #00a39E;
+    background: #0baee8;
+    color: #fff;
+    text-decoration: none
+}
+
+.product-detail-box .links .local-buy-link {
+    display: none;
+    border: 1px solid #30C37E;
+    background: #0baee8;
+    color: #fff
+}
+
+.product-detail-box .links .local-buy-link:hover {
+    border: 1px solid #00a39E;
+    background: #0baee8;
+    color: #fff;
+    text-decoration: none
+}
+
+.product-detail-box .links .compare-link {
+    border: 1px solid #d9d9d9;
+    background: #fff;
+    color: #666;
+    margin-right: 0;
+    line-height: 34px;
+    border-radius: 4px
+}
+
+.product-detail-box .links .compare-link:hover {
+    background: #f5f5f5;
+    color: #666;
+    text-decoration: none
+}
+
+.product-detail-box .minimum-link-A .icon {
+    width: 16px;
+    height: 16px;
+    background-position: 0 0
+}
+
+.product-detail-box .minimum-link-B .icon {
+    width: 15px;
+    height: 15px;
+    background-position: -54px -21px
+}
+
+.product-detail-box .consultation-link .icon {
+    width: 14px;
+    height: 14px;
+    background-position: -34px -60px
+}
+
+.product-detail-box .local-buy-link .icon {
+    margin-top: 9px;
+    width: 15px;
+    height: 20px;
+    background-position: 0 -23px
+}
+
+.product-detail-box .compare-link .icon {
+    margin-top: 6px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    background: 0 0
+}
+
+.product-detail-box .compare-link .icon::before {
+    content: "\e62a";
+    font-family: iconfont;
+    font-size: 20px;
+    color: #0baee8;
+    font-style: normal
+}
+
+.product-detail-box .links .dell-official-buy {
+    background-color: #0baee8;
+    border-color: #0baee8;
+}
+
+.product-detail-box .links .dell-official-buy:hover {
+    background-color: #0baee8;
+    border-color: #0baee8;
+}
+
+.nplayL-btns {
+    background: #f0f0f0;
+    height: 30px;
+    line-height: 30px
+}
+
+.nplayL-btns ul {
+    padding: 0 10px
+}
+
+.nplayL-btns li {
+    display: inline-block;
+    padding: 0 5px;
+    line-height: 32px;
+    vertical-align: top
+}
+
+.nplayL-btns li a {
+    color: #aaa
+}
+
+.nplayL-btns li a:hover {
+    text-decoration: none;
+    color: #0baee8 !important
+}
+
+.nplayL-btns li a.icon {
+    font-family: iconfont;
+    font-size: 20px
+}
+
+.nplayL-btns li.order a::before {
+    content: "\e67e"
+}
+
+.nplayL-btns li.single {
+    line-height: 28px
+}
+
+.nplayL-btns li.single a::before {
+    content: "\e600";
+    font-size: 18px
+}
+
+.nplayL-btns li.random a::before {
+    content: "\e680"
+}
+
+.nplayL-btns li.cl_all {
+    margin-left: 10px
+}
+
+.nplayL-btns li.next {
+    float: right;
+    line-height: 28px
+}
+
+.nplayL-btns li.next a {
+    color: #0baee8;
+}
+
+.nplayL-btns li.next a::before {
+    content: "\e612";
+    font-family: iconfont;
+    font-size: 16px;
+    margin-right: 5px;
+    position: relative;
+    top: 1px
+}
+
+.nplayL-btns li.current a {
+    color: #2a2cbb;
+    cursor: default
+}
+
+.product-detail-box .links .dell-official-buy .icon {
+    margin-top: 10px;
+    width: 20px;
+    height: 20px
+}
+
+.product-detail-box .links .jd-festival-buy, .product-detail-box .links .jd-festival-buy:hover {
+    width: 120px;
+    height: 40px;
+    border: 0 none;
+    padding: 0;
+    text-indent: -999em;
+    overflow: hidden
+}
+
+.product-detail-box .links .jd-festival-buy .icon {
+    display: none !important
+}
+
+.del_btn{
+    width: 100px;
+    text-align: center;
+}
+.del_btn:hover{
+    color: red;
+}

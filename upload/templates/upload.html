@@ -1,0 +1,79 @@
+{% extends "title_base.html" %}
+{% load static %}
+{% block header_extends %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/upload.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="upload-box">
+        <div class="upload-title">
+            <h3>音乐分享</h3>
+        </div>
+        <form class="form-horizontal" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="song_name" class="upload-label">音乐名:</label>
+                <div class="upload-input" style="width: 30%">
+                    {{ form.song_name }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="singer" class="upload-label">歌手:</label>
+                <div class="upload-input" style="width: 30%">
+                    {{ form.singer }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="id_category" class="upload-label">分类</label>
+                <div class="upload-input">{{ form.category }}</div>
+                <p style="padding-left: 38%;font-size: 10px">按住 Control 键或 Mac 上的 Command 键来选择多项。</p>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputFile1" class="upload-label">封面:</label>
+                <div class="upload-input">{{ form.song_image }}</div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputFile3" class="upload-label">歌词</label>
+                <div class="upload-input">{{ form.song_lrc }}</div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputFile2" class="upload-label">源文件</label>
+                <div class="upload-input">{{ form.song_file }}</div>
+            </div>
+            {% if tips %}
+                <div style="color: red;margin-left: 38%">提示:<span>{{ tips }}</span></div>
+            {% endif %}
+            <div style="display: none">
+                {{ form.upload_user }}
+                {{ form.song_release }}
+            </div>
+            <div class="form-group" style="padding: 20px 45% 20px 45%;">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button id="upload_btn" type="submit" class="btn btn-default"
+                            style="background-color: #0b95ea; color: white;font-weight: bold">分享
+                    </button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+    <script type="text/javascript" src="{% static 'js/plugins/jquery.min.js' %}"></script>
+    <script>
+        document.getElementById('id_song_release').value = gettime();
+        document.getElementById('id_upload_user').value = "{{ username }}";
+
+        function gettime() {
+            var mydate = new Date();
+            var year = mydate.getFullYear();
+            var month = mydate.getMonth() + 1;
+            var day = mydate.getDay();
+            var hour = mydate.getHours();
+            var minute = mydate.getMinutes();
+            var time = year + '年' + month + '月' + day + '日' + hour + ':' + minute;
+            return time;
+        }
+
+    </script>
+
+{% endblock %}

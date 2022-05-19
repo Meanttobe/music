@@ -1,0 +1,89 @@
+{% extends "title_base.html" %}
+{% load static %}
+
+{% block header_extends %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/comment.css' %}">
+{% endblock %}
+{% block content %}
+    <div style="margin: 30px 15% 0 15%">
+        <div class="breadcrumb">
+            <a href="/">首页</a> &gt;
+            <a href="{% url 'play' song_id %}" target="_self">{{ song_name }}</a> &gt;
+            <span>点评</span>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <p class="section-title">网友点评</p>
+            </div>
+            <div class="section-body">
+                <!--点评框-->
+                <div class="comments-box">
+                    <div class="comments-box-title">我要点评<<{{ song_name }}>></div>
+                    <form action="" method="post" id="usrform">
+                        {% csrf_token %}
+                        <div class="writebox">
+                            <textarea name="comment" form="usrform" style="width: 400px; height: 400px;"></textarea>
+                        </div>
+                        <div class="comments-box-button clearfix">
+                            <input type="submit" value="发布" class="comment-btn" id="scoreBtn">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix">
+            <div class="content" style="margin-top: 30px">
+                <div class="content-header">
+                    <p class="content-title">评论</p>
+                </div>
+
+                <ul class="comment-list">
+                    {% for item in contacts.object_list %}
+                        <li class="comment-item ">
+                            <div class="comments-user">
+                                <span class="face">
+                                    <img src="{% static 'image/user.jpg' %}" width="60" height="60">
+                                </span>
+                            </div>
+                            <div class="comments-list-content">
+                                <div class="single-score clearfix">
+                                    <span class="score">{{ item.comment_user }}</span>
+                                    <div class="date">
+                                        {{ item.comment_date }}
+                                    </div>
+                                </div>
+                                <!--comments-content-->
+                                <div class="comments-content">
+                                    <div class="comments-words">
+                                        <p>{{ item.comment_text }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="page-box">
+                    <div class="pagebar" id="pageBar">
+                        {% if contacts.has_previous %}
+                            <a href="{% url 'comment' song_id %}?page={{ contacts.previous_page_number }}"
+                               class="prev"
+                               target="_self"><i></i>上一页</a>
+                        {% endif %}
+                        {% for page in contacts.paginator.page_range %}
+                            {% if contacts.number == page %}
+                                <span class="sel">{{ page }}</span>
+                            {% else %}
+                                <a href="{% url 'comment' song_id %}?page={{ page }}" target="_self">{{ page }}</a>
+                            {% endif %}
+                        {% endfor %}
+                        {% if contacts.has_next %}
+                            <a href="{% url 'comment' song_id %}?page={{ contacts.next_page_number }}" class="next"
+                               target="_self">下一页<i></i></a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

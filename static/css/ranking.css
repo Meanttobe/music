@@ -1,0 +1,138 @@
+.main {
+    width: 70%;
+    margin: 20px 15% 0 15%;
+}
+
+
+.main-head-box {
+    height: 60px;
+    margin: 20px auto;
+    padding:0 43% 0 43%;
+
+}
+
+.main-head-box .main-head {
+    float: left;
+    position: relative;
+    margin-bottom: -2px;
+    padding-right: 2px;
+    background: #fff
+}
+
+.main-head-box h1, .main-head-box h2, .main-head-box strong {
+    display: block;
+    float: left;
+    height: 30px;
+    padding-bottom: 7px;
+    font: 28px/1 'Microsoft Yahei', arial
+}
+
+.main-head-box p {
+    float: right;
+    height: 32px;
+    margin-top: 6px;
+    white-space: nowrap;
+    font: 12px/32px arial;
+    color: #666
+}
+
+
+
+.rank-list-table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed
+}
+
+.rank-list-table th {
+    height: 30px;
+    border-bottom: 1px solid #e6e6e6;
+    background: #f7f7f7;
+    font-weight: 400
+}
+
+.rank-list-table td {
+    height: 100px;
+    border-bottom: 1px dotted #e6e6e6
+}
+
+.rank-list-table .cell-1 {
+    width:25%;
+}
+
+.rank-list-table .cell-2 {
+    width: 25%;
+}
+
+.rank-list-table .cell-3 {
+    padding-left: 20px;
+    width: 25%;
+    text-align: left
+}
+
+.rank-list-table .cell-4 {
+    width: 25%;
+}
+
+.rank-list-table .n1, .rank-list-table .n2 {
+    display: block;
+    margin-left: 10px;
+    width: 25%;
+    height: 18px;
+    text-align: center
+}
+.rank-list-table .n1 {
+    color: red;
+    font-size: 17px;
+    font-weight: bold;
+}
+.rank-list-table .n2 {
+    color: black;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+
+.rank-list-table .pic {
+    display: block;
+    width: 25%;
+    height: 82px;
+}
+
+.rank-list-table .pic img {
+    vertical-align: top;
+    border: 1px solid #e1e1e1
+}
+
+.rank-list-table .name-cell h3 {
+    padding: 0 0 0 15px;
+    width: 211px;
+    line-height: 22px;
+    font: 12px/22px arial
+}
+
+.rank-list-table .name-cell h3 a {
+    display: inline-block;
+    max-width: 240px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.rank-list-table .name-cell .desc {
+    padding-left: 15px;
+    width: 211px;
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+    zoom: 1
+}
+
+
+
+
+.name-cell .type {
+    color: #999;
+    font-family: simsun
+}
+

@@ -1,0 +1,137 @@
+{% extends "title_base.html"  %}<!-- extends引用统一的模板文件 -->
+{% load static %}
+
+{% block header_extends %}<!-- 第一个块 -->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content  %}<!-- 第二个块，在block里面填充页面内容 -->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="../../static/image/datu-1.jpg" alt="..." style="width: 100%;">
+            </div>
+            <div class="item">
+                <img src="../../static/image/datu-2.jpg" alt="..." style="width: 100%">
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!-- 新歌推荐模块 -->
+    <div class="today clearfix">
+        <div class="today-header">
+            <i></i>
+            <h2>新歌推荐</h2>
+        </div>
+        <div class="today-list-box">
+            <div class="today-list">
+                <ul>
+                    {% for list in daily_recommendation %}
+                        <li>
+                            <a class="pic layz_load" target="play" href="{% url 'play' list.id %}">
+                                <img src="../../media/{{ list.song_image }}" style="width: 100px"></a>
+                            <div class="name">
+                                <h3><a target="play" href="{% url 'play' list.id %}">{{ list.song_name }}</a></h3>
+                                <div class="singer"><span>{{ list.singer }}</span></div>
+                            </div>
+                            <div class="times"><span>{{ list.song_release }}</span></div>
+                            <a target="play" href="{% url 'play' list.id %}" class="today-buy-button">去听听></a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div><!--end today-->
+    <div class="aside" style="display: inline-block">
+        <h2>热门歌曲</h2>
+        <ul>
+            {% for song in play_hot_song %}
+                <li>
+                    <span>{{ forloop.counter }}</span>
+                    <a class="hot-song-name" target="play"
+                       href="{% url 'play' song.song.id %}">{{ song.song.song_name }}</a>
+                    <p class="hot-singer">{{ song.song.singer }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="section">
+        <ul class="section-header">
+            <li class="section-header-content">热门搜索</li>
+        </ul>
+        <div class="section-body clearfix">
+            <ul class="section-body-list clearfix">
+                {% for songs in contacts.object_list %}
+                    <li>
+                        <a target="play" href="{% url 'play' songs.id %}" class="pic">
+                            <img src="../../media/{{ songs.song_image }}" alt="123" style="width:130px">
+                        </a>
+                        <div class="info">
+
+                            <a target="play" class="song-name"
+                               href="{% url 'play' songs.id %}">{{ songs.song_name }}</a>
+
+                            <div class="singer"><span>{{ songs.singer }}</span></div>
+
+                            <div class="times">搜索次数：<span>{{ songs.times }}</span></div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="pages clearfix">
+                <ul>
+                    {# 首页按钮，固定page=1 #}
+                    <li><a href='?page=1'>首页</a></li>
+                    {# 如果上一页还有数据，那么让其可继续点击进入上一页 #}
+                    {% if contacts.has_previous %}
+                        <li><a href="?page={{ contacts.previous_page_number }}" data-ey_fc35fdc="html" data-tmp="1">上一页</a>
+                        </li>
+                        {# 如果上一页没有数据了，那么不让做任何操作 #}
+                    {% else %}
+                    {% endif %}
+
+                    {# 由后端经逻辑判断后的page_range页数列表进行迭代 #}
+                    {% for num in contacts.paginator.page_range %}
+                        {# 如果循环的页码与当前查看的页码相等，那么就让其高亮显示 #}
+                        {% if num == contacts.number %}
+                            <li class="thisclass"><a>{{ num }}</a></li>
+                        {% else %}
+                            <li><a href="?page={{ num }}" data-ey_fc35fdc="html" data-tmp="1">{{ num }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+
+                    {# 如果当前页还有下一页，那么让其可以点击进入下一页 #}
+                    {% if contacts.has_next %}
+                        <li><a href="?page={{ contacts.next_page_number }}" data-ey_fc35fdc="html" data-tmp="1">下一页</a></li>
+                    {% endif %}
+
+                    {# 跳转到尾页，让page参数直接等于总页数 #}
+                    <li><a href='?page={{ paginator.num_pages }}'>尾页</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </div><!--end section-->
+
+
+    <script type="text/javascript" src="{% static 'js/plugins/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/bootstrap-3.4.1/js/bootstrap.js' %}"></script>
+
+{% endblock %}

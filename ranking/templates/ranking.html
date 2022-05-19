@@ -1,0 +1,80 @@
+{% extends "title_base.html" %}
+{% load static %}
+{% block header_extends %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/ranking.css' %}">
+{% endblock %}
+{% block content %}
+
+    <div class="main">
+        <div class="main-head-box clearfix">
+            <div class="main-head">
+                <h1>歌曲排行榜</h1>
+            </div>
+        </div>
+        <table class="rank-list-table">
+            <tr>
+                <th class="cell-1">排名</th>
+                <th class="cell-2">图片</th>
+                <th class="cell-3">歌名</th>
+                <th class="cell-4">播放量</th>
+            </tr>
+            {% for item in contacts.object_list %}
+                <tr>
+                    {% if forloop.counter < 4 %}
+                        <td><span class="n1">{{ forloop.counter }}</span></td>
+                    {% else %}
+                        <td><span class="n2">{{ forloop.counter }}</span></td>
+                    {% endif %}
+                    <td>
+                        <a href="{% url 'play' item.song.id %}" class="pic" target="play">
+                            <img src="../../media/{{ item.song.song_image }}" width="80" height="80">
+                        </a>
+                    </td>
+                    <td class="name-cell">
+                        <h3>
+                            <a href="{% url 'play' item.song.id %}" target="play">{{ item.song.song_name }}</a>
+                        </h3>
+                        <div class="desc">
+                            <a href="#" target="_blank" class="type">{{ item.song.singer }}</a>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div>{{ item.dynamic_plays }}</div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <div class="pages clearfix">
+                <ul>
+                    {# 首页按钮，固定page=1 #}
+                    <li><a href='?page=1'>首页</a></li>
+                    {# 如果上一页还有数据，那么让其可继续点击进入上一页 #}
+                    {% if contacts.has_previous %}
+                        <li><a href="?page={{ contacts.previous_page_number }}" data-ey_fc35fdc="html" data-tmp="1">上一页</a>
+                        </li>
+                        {# 如果上一页没有数据了，那么不让做任何操作 #}
+                    {% else %}
+                    {% endif %}
+
+                    {# 由后端经逻辑判断后的page_range页数列表进行迭代 #}
+                    {% for num in contacts.paginator.page_range %}
+                        {# 如果循环的页码与当前查看的页码相等，那么就让其高亮显示 #}
+                        {% if num == contacts.number %}
+                            <li class="thisclass"><a>{{ num }}</a></li>
+                        {% else %}
+                            <li><a href="?page={{ num }}" data-ey_fc35fdc="html" data-tmp="1">{{ num }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+
+                    {# 如果当前页还有下一页，那么让其可以点击进入下一页 #}
+                    {% if contacts.has_next %}
+                        <li><a href="?page={{ contacts.next_page_number }}" data-ey_fc35fdc="html" data-tmp="1">下一页</a></li>
+                    {% endif %}
+
+                    {# 跳转到尾页，让page参数直接等于总页数 #}
+                    <li><a href='?page={{ paginator.num_pages }}'>尾页</a></li>
+                </ul>
+            </div>
+    </div>
+{% endblock %}

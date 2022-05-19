@@ -1,0 +1,351 @@
+.content {
+    margin: 20px 15% 0 15%;
+    min-height: 350px;
+    padding: 45px 0;
+    zoom: 1;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+}
+
+.pass-btn {
+    display: block;
+    width: 300px;
+    height: 42px;
+    background-color: #0baee8;
+    border: 0 none;
+    line-height: 42px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: 0;
+    text-align: center;
+    color: #fff;
+    -webkit-transition: .3s;
+    transition: .3s
+}
+
+.pass-btn:hover {
+    background-color: #00a39E;
+    color: #fff;
+    text-decoration: none
+}
+
+.login-btn {
+    position: relative;
+    zoom: 1;
+    height: 42px
+}
+
+.login-btn .wait-bar {
+    display: none;
+    position: absolute;
+    top: 38px;
+    left: 0;
+    height: 4px;
+    font: 0/0 arial
+}
+
+.login-btn-wait .pass-btn {
+    background-color: #008ef5;
+    overflow: hidden;
+    text-indent: -999em;
+    background-position: 0 -248px;
+    cursor: default
+}
+
+.login-btn-wait .wait-bar {
+    display: block
+}
+
+.title {
+    padding: 0 0 24px;
+    zoom: 1;
+    font: 18px/28px "Microsoft YaHei", arial;
+    color: #666
+}
+
+.login-regist {
+    margin: 30px auto 0 auto;
+    width: 300px;
+    padding: 0 94px
+}
+
+.login-box {
+    width: 300px;
+    background-color: #fff
+}
+
+.warning-tips, .wrong-tips {
+    display: none;
+    width: 288px;
+    height: 22px;
+    margin: 10px 0 0;
+    padding: 0 5px;
+    background-color: #fef2ef;
+    border: 1px solid #fcd5d4;
+    color: #666;
+    line-height: 22px
+}
+
+.login-regist .warning-tips, .login-regist .wrong-tips {
+    margin-top: -24px
+}
+
+.warning-tips .warning-ico, .wrong-tips .wrong-ico {
+    display: inline-block;
+    width: 18px;
+    height: 22px;
+    margin: 0 6px 0 0;
+    vertical-align: top;
+    background-position: -355px -111px
+}
+
+.wrong-tips .fast-login-ico {
+    display: inline-block;
+    width: 16px;
+    height: 22px;
+    margin: 0 1px;
+    vertical-align: top;
+    font: 0/0 arial
+}
+
+.wrong-tips .fast-login-ico-qq {
+    background-position: -137px -39px
+}
+
+.wrong-tips .fast-login-ico-sina {
+    background-position: -155px -39px
+}
+
+.wrong-tips .fast-login-ico-weixin {
+    background-position: -173px -39px
+}
+
+.wrong-tips .fast-login-ico-baidu {
+    background-position: -191px -39px
+}
+
+.warning-tips {
+    background-color: #e6f4fe;
+    border-color: #bbe0fc
+}
+
+.warning-tips .warning-ico {
+    background-position: -355px -138px
+}
+
+.member-pass {
+    margin: 0 0 5px;
+    color: #666
+}
+
+.member-pass .forget-pwd {
+    float: right
+}
+
+.member-pass .autologon {
+    margin-left: 4px
+}
+
+.member-pass input {
+    vertical-align: middle
+}
+
+.member-pass .member-pass-special {
+    margin: 0 3px
+}
+
+.pass-reglink {
+    margin: 7px 0 0;
+    text-align: right;
+    color: #666
+}
+
+.itembox {
+    position: relative;
+    width: 300px;
+    padding: 10px 0
+}
+
+.itembox .right-ico {
+    display: none;
+    position: absolute;
+    top: 21px;
+    right: -29px;
+    width: 18px;
+    height: 18px;
+    background-position: -262px 0
+}
+
+.itembox-ok .right-ico {
+    display: block
+}
+
+.item {
+    position: relative;
+    width: 236px;
+    height: 36px;
+    padding: 0 27px 0 35px;
+    border: 1px solid #e6e6e6
+}
+
+.item .txt {
+    position: relative;
+    z-index: 1;
+    width: 230px;
+    height: 18px;
+    padding: 9px 0 9px 10px;
+    background-color: transparent;
+    border: 0 none;
+    outline: 0;
+    color: #666;
+    font-size: 12px;
+    line-height: 18px
+}
+
+.item .ico {
+    position: absolute;
+    left: 9px;
+    top: 7px;
+    width: 26px;
+    height: 22px;
+    border-right: 1px solid #e6e6e6
+}
+
+.user-name .ico {
+    background-position: -356px 1px
+}
+
+.user-pwd .ico {
+    background-position: -357px -55px
+}
+
+.item .delete-btn {
+    display: none;
+    position: absolute;
+    top: 8px;
+    right: 6px;
+    width: 22px;
+    height: 21px;
+    cursor: pointer;
+    background-position: -297px 5px
+}
+
+.item .delete-btn:hover {
+    background-position: -280px 5px
+}
+
+.item .txt-tip {
+    position: absolute;
+    top: 7px;
+    left: 46px;
+    z-index: 0;
+    font-size: 12px;
+    line-height: 20px;
+    color: #ccc
+}
+
+.item-focus {
+    border-color: #0791f5
+}
+
+.item-wrong {
+    border-color: #fc4343
+}
+
+.user-name {
+    z-index: 2
+}
+
+.login-regist .user-name {
+    padding-top: 3px
+}
+
+.login-regist .user-name .right-ico {
+    top: 14px
+}
+
+.user-name .item-focus .ico {
+    background-position: -356px -27px
+}
+
+.user-pwd .item-focus .ico {
+    background-position: -357px -84px
+}
+
+.item .item-tippop {
+    display: none;
+    position: absolute;
+    top: 37px;
+    left: -1px;
+    width: 298px;
+    padding: 3px 0;
+    border: 1px solid #e7e7e7;
+    background-color: #fff
+}
+
+.item .item-tippop li {
+    padding: 6px 27px 6px 46px;
+    font-size: 16px;
+    color: #666;
+    line-height: 18px;
+    cursor: pointer;
+    white-space: normal;
+    word-break: break-all;
+    word-wrap: break-word
+}
+
+.item .item-tippop li.tippopHover {
+    background-color: #f6f6f6
+}
+
+
+
+
+.tips {
+    color: #f00;
+    display: none;
+}
+
+@-webkit-keyframes flip {
+    0% {
+        -webkit-transform: perspective(2000px) rotateY(0)
+    }
+    100% {
+        -webkit-transform: perspective(2000px) rotateY(90deg)
+    }
+}
+
+@-webkit-keyframes flip_out {
+    0% {
+        -webkit-transform: perspective(2000px) rotateY(-90deg)
+    }
+    100% {
+        -webkit-transform: perspective(2000px) rotateY(0)
+    }
+}
+
+@keyframes flip {
+    0% {
+        transform: perspective(2000px) rotateY(0)
+    }
+    100% {
+        transform: perspective(2000px) rotateY(90deg)
+    }
+}
+
+@keyframes flip_out {
+    0% {
+        transform: perspective(2000px) rotateY(-90deg)
+    }
+    100% {
+        transform: perspective(2000px) rotateY(0)
+    }
+}
+
+#unauth_main.switching {
+    -webkit-transform: perspective(2000px) rotateY(-90deg);
+    -webkit-animation: flip .4s linear, flip_out .4s .41s linear;
+    transform: perspective(2000px) rotateY(-90deg);
+    animation: flip .4s linear, flip_out .4s .41s linear
+}

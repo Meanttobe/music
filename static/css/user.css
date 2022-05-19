@@ -1,0 +1,114 @@
+.user-body{
+    margin: 20px 15% 0 15%;
+}
+
+.user-body-left{
+    float: left;
+    display: inline-block;
+    width: 300px;
+}
+.user-pic{
+    text-align: center;
+}
+.user-name{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    color: #0baee8;
+    line-height: 64px;
+    margin-right: 4px
+}
+.user-logout{
+    display: block;
+    text-align: center;
+    color: #0e9696;
+}
+
+.user-logout:hover{
+    color: #0A4FA1;
+}
+
+.main{
+    float: left;
+    width: 700px;
+    margin-left: 30px;
+}
+.main .list{
+    margin: 10px 0 10px 30px;
+}
+.main .list .list-name{
+    color: #0baee8;
+    font-size: 20px;
+}
+
+.mod_songlist {
+    padding: 40px 0;
+    font-size: 14px;
+    overflow: hidden
+}
+
+.songlist_header {
+    height: 50px;
+    line-height: 50px;
+    background-color: #fbfbfd;
+    color: #999
+}
+.songlist_list {
+    height: 50px;
+    line-height: 50px;
+    background-color: #fbfbfd;
+    color: #999
+}
+
+
+.songlist_header_name, .songlist_songname {
+    float: left;
+    width: 25%;
+    white-space: normal;
+    text-align: center;
+}
+
+.songlist_artist, .songlist_header_author {
+    float: left;
+    text-align: center;
+    width: 25%
+}
+
+.songlist_header_time, .songlist_time {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+.songlist_delete, .songlist_header_delete{
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+
+
+.songlist_artist, .songlist_songname, .songlist_time {
+    line-height: 50px;
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px
+}
+.del_btn{
+    border-radius: 20%;
+    font-weight: bold;
+}
+
+.del_btn:hover{
+
+    border: none;
+    border-radius: 20%;
+    background-color: #c01542;
+    color: white;
+    font-weight: bold;
+
+}
+
+
+
