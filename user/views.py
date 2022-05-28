@@ -18,6 +18,7 @@ def loginView(request):
         # 判断表单提交是用户登录还是用户注册
         # 用户登录
         if request.POST.get('loginUser', ''):
+            gg = False
             loginUser = request.POST.get('loginUser', '')
             password = request.POST.get('password', '')
             if MyUser.objects.filter(Q(mobile=loginUser) | Q(username=loginUser)):
@@ -37,9 +38,15 @@ def loginView(request):
                 tips = '注册成功'
             else:
                 if user.errors.get('username',''):
-                    tips = user.errors.get('username','注册失败')
+                    tips = user.errors.get('username')
+                elif user.errors.get('mobile',''):
+                    tips = user.errors.get('mobile')
+                elif user.errors.get('password1'):
+                    tips = user.errors.get('password1')
+                elif user.errors.get('password2'):
+                    tips = user.errors.get('password2')
                 else:
-                    tips = user.errors.get('mobile', '注册失败')
+                    tips = user.errors
     return render(request, 'login.html', locals())
 
 # 用户中心

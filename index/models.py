@@ -50,5 +50,5 @@ class Comment(models.Model):
         verbose_name = '歌曲评论'
         verbose_name_plural = verbose_name
     def __str__(self):
-        return self.comment_id
+        return self.comment_user
 # Create your models here.

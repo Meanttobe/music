@@ -55,10 +55,10 @@
 <div class="nav-box clearfix">
     <div class="nav-box-inner wrapper">
         <dl class="nav clearfix">
-            <dd><a href="/" style="font-size: 20px">首页</a></dd>
-            <dd><a href="{% url 'ranking' %}" target="_blank" style="font-size: 20px">歌曲排行</a></dd>
-            <dd><a href="{% url 'upload' %}" target="_blank" style="font-size: 20px">音乐分享</a></dd>
-            <dd><a href="{% url 'home' 1 %}" target="_blank" style="font-size: 20px">用户中心</a></dd>
+            <dd><a href="/" style="font-size: 20px" target="_self">首页</a></dd>
+            <dd><a href="{% url 'ranking' %}" target="_self" style="font-size: 20px">歌曲排行</a></dd>
+            <dd><a href="{% url 'upload' %}" target="_self" style="font-size: 20px">音乐分享</a></dd>
+            <dd><a href="{% url 'home' 1 %}" target="_self" style="font-size: 20px">用户中心</a></dd>
         </dl>
     </div>
 </div><!--end nav-box-->

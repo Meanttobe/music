@@ -8,7 +8,7 @@ import time
 
 def commentView(request, song_id):
     username = request.user.username
-    search_song = Dynamic.objects.select_related('song').order_by('-dynamic_search').all()[:4]
+    search_song = Dynamic.objects.select_related('song').order_by('-dynamic_search').all()[:20]
     # 点评提交处理
     if request.method == 'POST':
         comment_text = request.POST.get('comment','')
@@ -23,13 +23,10 @@ def commentView(request, song_id):
         return redirect('/comment/%s.html' %(str(song_id)))
 
     song_info = Audio.objects.filter(id=song_id).first()
-    # 歌曲不存在抛出404异常
-    if not song_info:
-        raise Http404
-    comment_all = Comment.objects.filter(comment_id=song_id).order_by('comment_date')
+    comment_all = Comment.objects.filter(song_id=song_id).order_by('comment_date')
     song_name = song_info.song_name
-    page = int(request.GET.get('page', 1))
-    paginator = Paginator(comment_all, 2)
+    page = request.GET.get('page')
+    paginator = Paginator(comment_all, 6)
     try:
         contacts = paginator.page(page)
     except PageNotAnInteger:

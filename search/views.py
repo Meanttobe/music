@@ -8,9 +8,10 @@ def searchView(request, page):
         search_song = Dynamic.objects.select_related('song').order_by('-dynamic_search').all()[:6]
         # 获取搜索内容，如果kword为空即查询全部歌曲
         kword = request.session.get('kword', '')
+        song_info = ''
         if kword:
             song_info = Audio.objects.values('id', 'song_name', 'singer','song_release').filter(Q(song_name__icontains=kword) | Q(singer=kword)).order_by('-song_release').all()
-        else:
+        if not song_info:
             song_info = Audio.objects.values('id', 'song_name', 'singer','song_release').order_by('-song_release').all()[:50]
         # 分页功能
         page = request.GET.get('page')
